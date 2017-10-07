@@ -135,7 +135,9 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\TargetPool.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\TextureFormatUtilities.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\TextureLerper.cs" />
+    <Compile Include="Assets\Scripts\FalloffEdgeDetection.cs" />
     <Compile Include="Assets\Scripts\FlyCamera.cs" />
+    <Compile Include="Assets\Scripts\PostEffectsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NatureStarterKit2\info.txt" />
@@ -189,6 +191,7 @@
     <None Include="Assets\PostProcessing\Shaders\Sampling.hlsl" />
     <None Include="Assets\PostProcessing\Shaders\StdLib.hlsl" />
     <None Include="Assets\PostProcessing\Shaders\xRLib.hlsl" />
+    <None Include="Assets\Scripts\Shaders\FalloffEdgeDetectNormals.shader" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Readme.txt" />
