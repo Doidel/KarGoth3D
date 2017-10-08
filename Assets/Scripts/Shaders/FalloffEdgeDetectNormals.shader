@@ -7,13 +7,15 @@ Shader "FalloffEdgeDetect" {
 	}
 
 	CGINCLUDE
+// Upgrade NOTE: excluded shader from DX11; has structs without semantics (struct v2f members srcPos)
+//#pragma exclude_renderers d3d11
 	
 	#include "UnityCG.cginc"
 	
 	struct v2f {
 		float4 pos : SV_POSITION;
 		float2 uv[5] : TEXCOORD0;
-		float4 scrPos:TEXCOORD1;
+		float4 scrPos : TEXCOORD5;
 	};
 	
 	struct v2fd {
@@ -121,7 +123,7 @@ Shader "FalloffEdgeDetect" {
 		o.pos = UnityObjectToClipPos (v.vertex);
 		o.scrPos = ComputeScreenPos(o.pos);
 		//for some reason, the y position of the depth texture comes out inverted
-		o.scrPos.y = 1 - o.scrPos.y;
+		//o.scrPos.y = 1 - o.scrPos.y;
 		
 		float2 uv = v.texcoord.xy;
 		o.uv[0] = uv;
@@ -284,16 +286,13 @@ Shader "FalloffEdgeDetect" {
 		//float opacity = _Falloff * clamp(i.pos.z / _Falloff, 0.0, 1.0);
 
 		float depthValue = Linear01Depth(tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos)).r);
-		half4 depth;
+		half4 depth = half4(depthValue, depthValue, depthValue, 1.0) * 10;
+		depth = clamp(depth, 0.0, 1.0);
+		//return depth * 10;
 
-		depth.r = depthValue;
-		depth.g = depthValue;
-		depth.b = depthValue;
+		//return edge * lerp(original, _BgColor, _BgFade);
 
-		depth.a = 1;
-		return depth;
-
-		//return edge * lerp(original, _BgColor, _BgFade) + (1.0 - edge) * (opacity * original);
+		return edge * lerp(original, _BgColor, _BgFade) + (1.0 - edge) * (depth * original);
 		//float depth = Linear01Depth(UNITY_SAMPLE_DEPTH(tex2D(_CameraDepthTexture, i.uv)));
 		//return half4(depth, depth, depth, 1);
 		//return i.pos.z * half4(1.0,1.0,1.0,1.0);
