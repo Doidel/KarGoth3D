@@ -230,6 +230,7 @@
     <None Include="Assets\PostProcessing\Shaders\Sampling.hlsl" />
     <None Include="Assets\PostProcessing\Shaders\StdLib.hlsl" />
     <None Include="Assets\PostProcessing\Shaders\xRLib.hlsl" />
+    <None Include="Assets\Scripts\Shaders\FalloffEdgeDetectNormals.shader" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Readme.txt" />

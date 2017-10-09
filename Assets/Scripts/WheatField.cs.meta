@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b78be164ca31b0d44b05cc6b938530c8
+timeCreated: 1507563096
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - WheatSprite: {fileID: 1860033923579600, guid: 4f205e383d5623f4785a3c84d0c43c3f,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
