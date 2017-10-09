@@ -124,6 +124,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets\Hydrogen Framework\Hydrogen\Editor\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="MarkoHouse.csproj">
@@ -139,6 +142,16 @@
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Hydrogen Framework\Hydrogen\CHANGELOG.txt" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Extras\Visual Studio\Unity.xml" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\README.txt" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Color-Color.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Color-Specular.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Color-SpecularEmissive.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Color-Unlit.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Texture-Unlit.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Texture-UnlitAlpha.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Texture-UnlitAlphaTinted.shader" />
     <None Include="Assets\NatureStarterKit2\info.txt" />
     <None Include="Assets\PostProcessing\Shaders\ACES.hlsl" />
     <None Include="Assets\PostProcessing\Shaders\API\D3D11.hlsl" />

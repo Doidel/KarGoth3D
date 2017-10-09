@@ -84,6 +84,52 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Components\Hydrogen.Core\hAudioStack.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Components\Hydrogen.Core\hDebug.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Components\Hydrogen.Core\hObjectPool.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Components\Hydrogen.Core\hObjectPoolItem.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Components\Hydrogen.Core\hWebPool.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Components\Hydrogen.Peripherals\hInput.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Components\Hydrogen.Threading.Jobs\hMeshCombiner.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Core\AudioStack.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Core\AudioStackItem.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Core\ObjectPool.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Core\ObjectPoolCollection.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Core\ObjectPoolItemBase.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Core\WebPool.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Core\WebPoolWorker.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\Input.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\InputAxisControl.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\InputControlBase.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\InputDeltaAxisControl.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\InputDoubleDeltaAxisControl.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\InputGestureBase.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\InputKeyboardButtonControl.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\InputMouseButtonControl.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\InputMouseGestureControl.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\InputTouchAxisControl.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Peripherals\InputTouchGestureControl.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Serialization\INI.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Serialization\JSON.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Serialization\JSONObject.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Threading.Jobs\MeshCombiner.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Threading\Forker.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Threading\JobBase.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Threading\ThreadedJob.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen.Threading\ThreadPoolJob.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Array.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Components.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Layers.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Material.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Math.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Memory.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Mesh.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\NavMesh.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Regex.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Resources.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Texture.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\Validate.cs" />
+    <Compile Include="Assets\Hydrogen Framework\Hydrogen\Plugins\Hydrogen\XML.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\DisplayNameAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MaxAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
@@ -137,9 +183,21 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\TextureLerper.cs" />
     <Compile Include="Assets\Scripts\FalloffEdgeDetection.cs" />
     <Compile Include="Assets\Scripts\FlyCamera.cs" />
+    <Compile Include="Assets\Scripts\MeshCombiner.cs" />
     <Compile Include="Assets\Scripts\PostEffectsBase.cs" />
+    <Compile Include="Assets\Scripts\WheatField.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Hydrogen Framework\Hydrogen\CHANGELOG.txt" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Extras\Visual Studio\Unity.xml" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\README.txt" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Color-Color.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Color-Specular.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Color-SpecularEmissive.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Color-Unlit.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Texture-Unlit.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Texture-UnlitAlpha.shader" />
+    <None Include="Assets\Hydrogen Framework\Hydrogen\Shaders\Texture-UnlitAlphaTinted.shader" />
     <None Include="Assets\NatureStarterKit2\info.txt" />
     <None Include="Assets\PostProcessing\Shaders\ACES.hlsl" />
     <None Include="Assets\PostProcessing\Shaders\API\D3D11.hlsl" />
