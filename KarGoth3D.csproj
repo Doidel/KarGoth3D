@@ -137,6 +137,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\TextureLerper.cs" />
     <Compile Include="Assets\Scripts\FalloffEdgeDetection.cs" />
     <Compile Include="Assets\Scripts\FlyCamera.cs" />
+    <Compile Include="Assets\Scripts\MeshCombiner.cs" />
     <Compile Include="Assets\Scripts\PostEffectsBase.cs" />
     <Compile Include="Assets\Scripts\WheatField.cs" />
   </ItemGroup>

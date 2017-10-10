@@ -177,6 +177,7 @@
     <Compile Include="Assets\PostProcessing\Editor\Utils\GlobalSettings.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Utils\SerializedParameterOverride.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Utils\Styling.cs" />
+    <Compile Include="Assets\Scripts\Editor\MeshCombinerEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NatureStarterKit2\info.txt" />

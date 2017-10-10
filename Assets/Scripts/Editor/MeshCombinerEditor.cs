@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(hMeshCombiner))]
+[CustomEditor(typeof(MeshCombiner))]
 public class MeshCombinerEditor : Editor
 {
     void OnSceneGUI()
     {
-        hMeshCombiner mc = hMeshCombiner.Instance;
-        if (Handles.Button(mc.transform.position+Vector3.up * 5, Quaternion.LookRotation(Vector3.up), 1, 1, Handles.CylinderCap))
+        MeshCombiner mc = target as MeshCombiner;
+        if (Handles.Button(mc.transform.position+Vector3.up * 5, Quaternion.LookRotation(Vector3.up), 1, 1, Handles.CylinderHandleCap))
         {
-            var t = (target as hMeshCombiner).gameObject;
-            mc.Combine(t, t.transform, false);
+            mc.AdvancedMerge();
         }
     }
 }

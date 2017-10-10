@@ -122,8 +122,6 @@ Shader "FalloffEdgeDetect" {
 		v2f o;
 		o.pos = UnityObjectToClipPos (v.vertex);
 		o.scrPos = ComputeScreenPos(o.pos);
-		//for some reason, the y position of the depth texture comes out inverted
-		//o.scrPos.y = 1 - o.scrPos.y;
 		
 		float2 uv = v.texcoord.xy;
 		o.uv[0] = uv;
@@ -136,12 +134,9 @@ Shader "FalloffEdgeDetect" {
 		o.uv[1] = uv;
 		o.uv[4] = uv;
 
-		//float dist = 1.0-clamp(length(WorldSpaceViewDir(v.vertex)) / _Falloff, 0.0, 1.0);
-		float dist = 1.0;
-
 		// offsets for two additional samples
-		o.uv[2] = uv + float2(-_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance * dist;
-		o.uv[3] = uv + float2(+_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance * dist;
+		o.uv[2] = uv + float2(-_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance;
+		o.uv[3] = uv + float2(+_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance;
 		
 		return o;
 	}	  
@@ -286,8 +281,9 @@ Shader "FalloffEdgeDetect" {
 		//float opacity = _Falloff * clamp(i.pos.z / _Falloff, 0.0, 1.0);
 
 		float depthValue = Linear01Depth(tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos)).r);
-		half4 depth = half4(depthValue, depthValue, depthValue, 1.0) * 10;
-		depth = clamp(depth, 0.0, 1.0);
+		depthValue = clamp(depthValue * 10, 0.0, 1.0);
+		half4 depth = half4(depthValue, depthValue, depthValue, 1.0);
+		//depth = clamp(depth, 0.0, 1.0);
 		//return depth * 10;
 
 		//return edge * lerp(original, _BgColor, _BgFade);
@@ -302,7 +298,7 @@ Shader "FalloffEdgeDetect" {
 	
 Subshader {
  Pass {
-	  ZTest Always Cull Off ZWrite Off
+	  ZTest LEqual Cull Back ZWrite Off
 
       CGPROGRAM
       #pragma vertex vertThin
