@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: 74faed2bc32564446bd6dd84b5527a54
 SpeedTreeImporter:
   serializedVersion: 4
-  mainColor: {r: 0.99264705, g: 0.62528706, b: 0.3430471, a: 1}
+  mainColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
   hueVariation: {r: 1, g: 0.5, b: 0, a: 0.101960786}
   alphaTestRef: 0.33
   bestWindQuality: 4
