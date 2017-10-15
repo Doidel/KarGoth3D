@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//[ExecuteInEditMode]
 public class WheatField : MonoBehaviour {
 
     public GameObject WheatSprite;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+        foreach (Transform child in transform)
+            Destroy(child.gameObject);
         var random = new Random();
         for (int x = 0; x < 10; x++)
         {

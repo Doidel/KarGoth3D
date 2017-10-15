@@ -219,6 +219,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
@@ -304,6 +305,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NatureStarterKit2\info.txt" />
+    <None Include="Assets\Odds_N_Ends Series - Tropical Foliage v1.0\READ ME.txt" />
+    <None Include="Assets\Odds_N_Ends Series - Tropical Foliage v1.0\Shader\CustomFoliage.shader" />
     <None Include="Assets\PostProcessing\Shaders\ACES.hlsl" />
     <None Include="Assets\PostProcessing\Shaders\API\D3D11.hlsl" />
     <None Include="Assets\PostProcessing\Shaders\API\D3D12.hlsl" />
@@ -438,6 +441,11 @@
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
+    <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
+    <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
+    <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
+    <None Include="Assets\modern_farm\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
