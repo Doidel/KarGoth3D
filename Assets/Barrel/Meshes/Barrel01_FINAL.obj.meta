@@ -4,8 +4,20 @@ timeCreated: 18446744011573954816
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: Default
+    400000: //RootNode
+    400002: Default
+    2300000: Default
+    3300000: Default
     4300000: Default
-  externalObjects: {}
+    11100000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DefaultMat
+    second: {fileID: 2100000, guid: 6dde0f8f7bf69d24eafe8581e5f30950, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
