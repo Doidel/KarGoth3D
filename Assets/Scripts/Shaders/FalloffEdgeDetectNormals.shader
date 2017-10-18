@@ -278,20 +278,18 @@ Shader "FalloffEdgeDetect" {
 		edge *= CheckSame(centerNormal, centerDepth, sample1);
 		edge *= CheckSame(centerNormal, centerDepth, sample2);
 
+		//if (edge < 0.5) discard;
+
 		//float opacity = _Falloff * clamp(i.pos.z / _Falloff, 0.0, 1.0);
 
 		float depthValue = Linear01Depth(tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.scrPos)).r);
-		depthValue = clamp(depthValue * 10, 0.0, 1.0);
+		depthValue = clamp(depthValue * _Falloff - 0.05, 0.0, 1.0);
 		half4 depth = half4(depthValue, depthValue, depthValue, 1.0);
 		//depth = clamp(depth, 0.0, 1.0);
 		//return depth * 10;
 
-		//return edge * lerp(original, _BgColor, _BgFade);
-
-		return edge * lerp(original, _BgColor, _BgFade) + (1.0 - edge) * (depth * original);
-		//float depth = Linear01Depth(UNITY_SAMPLE_DEPTH(tex2D(_CameraDepthTexture, i.uv)));
-		//return half4(depth, depth, depth, 1);
-		//return i.pos.z * half4(1.0,1.0,1.0,1.0);
+		half4 res = edge * lerp(original, _BgColor, _BgFade) + (1.0 - edge) * depth * original;
+		return res;
 	}
 	
 	ENDCG 
