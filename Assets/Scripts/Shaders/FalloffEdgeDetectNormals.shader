@@ -54,6 +54,11 @@ Shader "FalloffEdgeDetect" {
 		return o;
 	}
 
+	struct fragOut
+	{
+		half4 color : SV_Target;
+		float depth : SV_Depth;
+	};
 
 	fixed4 fragLum (v2flum i) : SV_Target
 	{
@@ -137,7 +142,7 @@ Shader "FalloffEdgeDetect" {
 		// offsets for two additional samples
 		o.uv[2] = uv + float2(-_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance;
 		o.uv[3] = uv + float2(+_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance;
-		
+
 		return o;
 	}	  
 	 
@@ -275,10 +280,10 @@ Shader "FalloffEdgeDetect" {
 		
 		half edge = 1.0;
 		
+		if (edge > 0.5) discard;
+		
 		edge *= CheckSame(centerNormal, centerDepth, sample1);
 		edge *= CheckSame(centerNormal, centerDepth, sample2);
-
-		//if (edge < 0.5) discard;
 
 		//float opacity = _Falloff * clamp(i.pos.z / _Falloff, 0.0, 1.0);
 
@@ -289,6 +294,10 @@ Shader "FalloffEdgeDetect" {
 		//return depth * 10;
 
 		half4 res = edge * lerp(original, _BgColor, _BgFade) + (1.0 - edge) * depth * original;
+		//res.z -= 0.1;
+		fragOut o;
+		o.color = res;
+		o.depth = 1.0;
 		return res;
 	}
 	
@@ -296,7 +305,7 @@ Shader "FalloffEdgeDetect" {
 	
 Subshader {
  Pass {
-	  ZTest LEqual Cull Back ZWrite Off
+	  ZTest LEqual Cull Off ZWrite Off
 
       CGPROGRAM
       #pragma vertex vertThin

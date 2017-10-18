@@ -29,14 +29,14 @@ MonoBehaviour:
     m_Settings:
       excludeSkybox: 1
   antialiasing:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       method: 0
       fxaaSettings:
         preset: 2
       taaSettings:
-        jitterSpread: 0.1
-        sharpen: 0.3
+        jitterSpread: 0.244
+        sharpen: 0.5
         stationaryBlending: 0.95
         motionBlending: 0.85
   ambientOcclusion:
@@ -109,10 +109,10 @@ MonoBehaviour:
         texture: {fileID: 0}
         intensity: 3
   colorGrading:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       tonemapping:
-        tonemapper: 0
+        tonemapper: 2
         neutralBlackIn: 0.02
         neutralWhiteIn: 10
         neutralBlackOut: 0
