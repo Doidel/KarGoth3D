@@ -276,13 +276,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="KarGoth3D.Plugins.csproj">
-      <Project>{5CF6B930-D837-F10B-B0ED-7C0FCFEA93FF}</Project>
-      <Name>KarGoth3D.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="KarGoth3D.csproj">
       <Project>{504B7B82-C2B4-EF57-DBCB-07332239B080}</Project>
       <Name>KarGoth3D</Name>
+    </ProjectReference>
+    <ProjectReference Include="KarGoth3D.Plugins.csproj">
+      <Project>{5CF6B930-D837-F10B-B0ED-7C0FCFEA93FF}</Project>
+      <Name>KarGoth3D.Plugins</Name>
     </ProjectReference>
     <ProjectReference Include="KarGoth3D.Editor.Plugins.csproj">
       <Project>{71672EFC-3BF7-451D-242B-7F1335BA8B90}</Project>
@@ -385,6 +385,7 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+    <None Include="Assets\Scripts\EdgeRTApply.shader" />
     <None Include="Assets\Scripts\Shaders\FalloffEdgeDetectNormals.shader" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
@@ -470,9 +471,6 @@
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
-    <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
-    <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
-    <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
     <None Include="Assets\modern_farm\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -273,12 +273,15 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\Scripts\EdgeRT.cs" />
     <Compile Include="Assets\Scripts\FalloffEdgeDetection.cs" />
     <Compile Include="Assets\Scripts\Fence.cs" />
     <Compile Include="Assets\Scripts\FlyCamera.cs" />
     <Compile Include="Assets\Scripts\Garden.cs" />
     <Compile Include="Assets\Scripts\MeshCombiner.cs" />
+    <Compile Include="Assets\Scripts\PaintEdges.cs" />
     <Compile Include="Assets\Scripts\PostEffectsBase.cs" />
+    <Compile Include="Assets\Scripts\RenderEdgesOnTop.cs" />
     <Compile Include="Assets\Scripts\WheatField.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -326,6 +329,7 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+    <None Include="Assets\Scripts\EdgeRTApply.shader" />
     <None Include="Assets\Scripts\Shaders\FalloffEdgeDetectNormals.shader" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
@@ -411,9 +415,6 @@
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
-    <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
-    <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
-    <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
     <None Include="Assets\modern_farm\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

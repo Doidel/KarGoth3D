@@ -77,6 +77,10 @@ namespace KarGoth3D.ImageEffects
                 return;
             }
 
+            // Option A: Write only edges to destination. Requires depth write, since effect is SS and depth already precomputed.
+            // Option B: ^ Render to Texture
+
+
             Vector2 sensitivity = new Vector2(sensitivityDepth, sensitivityNormals);
             edgeDetectMaterial.SetVector("_Sensitivity", new Vector4(sensitivity.x, sensitivity.y, 1.0f, sensitivity.y));
             edgeDetectMaterial.SetFloat("_BgFade", edgesOnly);

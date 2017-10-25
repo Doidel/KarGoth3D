@@ -280,10 +280,13 @@ Shader "FalloffEdgeDetect" {
 		
 		half edge = 1.0;
 		
-		if (edge > 0.5) discard;
+		//if (edge < 0.5) discard;
 		
 		edge *= CheckSame(centerNormal, centerDepth, sample1);
 		edge *= CheckSame(centerNormal, centerDepth, sample2);
+
+		//edge *= original.a;
+		half4 atest = half4(original.a, original.a, original.a, original.a);
 
 		//float opacity = _Falloff * clamp(i.pos.z / _Falloff, 0.0, 1.0);
 
