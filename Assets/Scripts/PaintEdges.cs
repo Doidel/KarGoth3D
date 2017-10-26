@@ -27,7 +27,7 @@ public class PaintEdges : MonoBehaviour {
         }
     }
 
-    private void Awake()
+    void Awake()
     {
         // copy this object's materials
         var materials = GetComponent<MeshRenderer>().sharedMaterials;
@@ -35,6 +35,7 @@ public class PaintEdges : MonoBehaviour {
         if (materials.Length != mesh.subMeshCount) throw new UnityException("Material and Submesh count are different");
 
         var edges = GetMeshEdges(mesh);
+
     }
 
     private Edge[][] GetMeshEdges(Mesh mesh)

@@ -4,10 +4,10 @@
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
-		_SensitivityX ("SensitivityX", Range(0,5)) = 0.9
-		_SensitivityY ("SensitivityY", Range(0,5)) = 0.9
-		_SampleDistance ("SampleDistance", Range(1,3)) = 1.0
-		_Falloff ("Falloff", Range(0, 100)) = 1.0
+		_SensitivityX ("SensitivityX", Range(0,5)) = 3.75
+		_SensitivityY ("SensitivityY", Range(0,5)) = 0.82
+		_SampleDistance ("SampleDistance", Range(0,2)) = 1
+		_Falloff ("Falloff", Range(0, 100)) = 10.0
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -15,7 +15,7 @@
 		
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types
-		#pragma surface surf Standard fullforwardshadows finalcolor:edgecolor vertex:edgevert
+		#pragma surface surf Standard fullforwardshadows finalcolor:edgecolor
 
 		// Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0
@@ -29,9 +29,6 @@
 		struct Input {
 			float2 uv_MainTex;
 			float4 screenPos;
-			float2 uv_P0;
-			float2 uv_P1;
-			float2 uv_P2;
 		};
 
 		half _Glossiness;
@@ -62,6 +59,15 @@
 			return isSameNormal * isSameDepth ? 1.0 : 0.0;
 		}
 
+		/*inline half QuantizeChange(half2 centerNormal, float centerDepth, half4 theSample)
+		{
+			half2 diff = abs(centerNormal - theSample.xy) * _SensitivityY;
+			float sampleDepth = DecodeFloatRG(theSample.zw);
+			float zdiff = abs(centerDepth - sampleDepth);
+
+			return (diff.x + diff.y) * _SensitivityY + zdiff * _SensitivityX * 10.0;
+		}*/
+
 		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
 		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
 		// #pragma instancing_options assumeuniformscaling
@@ -69,17 +75,12 @@
 			// put more per-instance properties here
 		//UNITY_INSTANCING_CBUFFER_END
 
-		void edgevert(inout appdata_full v, out Input data)
-		{
-			UNITY_INITIALIZE_OUTPUT(Input, data);
-		}
-
 		void edgecolor(Input IN, SurfaceOutputStandard o, inout fixed4 color)
 		{
-			/*float2 screenUV = IN.screenPos.xy / IN.screenPos.w;
+			float2 screenUV = IN.screenPos.xy / IN.screenPos.w;
 
-			float sampleSizeX = 0.001; // _CameraDepthNormalsTexture_TexelSize.x;
-			float sampleSizeY = sampleSizeX; // _CameraDepthNormalsTexture_TexelSize.y;
+			float sampleSizeX = _CameraDepthNormalsTexture_TexelSize.x; // _CameraDepthNormalsTexture_TexelSize.x;
+			float sampleSizeY = _CameraDepthNormalsTexture_TexelSize.y; // _CameraDepthNormalsTexture_TexelSize.y;
 			float2 _uv2 = screenUV + float2(-sampleSizeX, -sampleSizeY) * _SampleDistance;
 			float2 _uv3 = screenUV + float2(+sampleSizeX, -sampleSizeY) * _SampleDistance;
 
@@ -93,14 +94,14 @@
 			// decoded depth
 			float centerDepth = DecodeFloatRG(center.zw);
 
+			float d = clamp(centerDepth * _Falloff - 0.05, 0.0, 1.0);
+			half4 depth = half4(d, d, d, 1.0);
+
 			half edge = 1.0;
 			edge *= CheckSame(centerNormal, centerDepth, sample1);
 			edge *= CheckSame(centerNormal, centerDepth, sample2);
 
-			float d = clamp(centerDepth * _Falloff - 0.05, 0.0, 1.0);
-			half4 depth = half4(d, d, d, 1.0);
-
-			color = edge * color + (1.0 - edge) * depth * color;*/
+			color = edge * color + (1.0 - edge) * depth * color;
 		}
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
@@ -113,10 +114,10 @@
 			o.Smoothness = _Glossiness;
 			o.Alpha = c.a;
 
-			float2 screenUV = IN.screenPos.xy / IN.screenPos.w;
+			/*float2 screenUV = IN.screenPos.xy / IN.screenPos.w;
 
-			float sampleSizeX = 0.001; // _CameraDepthNormalsTexture_TexelSize.x;
-			float sampleSizeY = sampleSizeX; // _CameraDepthNormalsTexture_TexelSize.y;
+			float sampleSizeX = _CameraDepthNormalsTexture_TexelSize.x; // ;
+			float sampleSizeY = _CameraDepthNormalsTexture_TexelSize.y; // _CameraDepthNormalsTexture_TexelSize.y;
 			float2 _uv2 = screenUV + float2(-sampleSizeX, -sampleSizeY) * _SampleDistance;
 			float2 _uv3 = screenUV + float2(+sampleSizeX, -sampleSizeY) * _SampleDistance;
 
@@ -137,7 +138,7 @@
 			float d = clamp(centerDepth * _Falloff - 0.05, 0.0, 1.0);
 			half4 depth = half4(d, d, d, 1.0);
 
-			o.Albedo = edge * o.Albedo + (1.0 - edge) * depth.xyz * o.Albedo;
+			o.Albedo = edge * o.Albedo + (1.0 - edge) * depth.xyz * o.Albedo;*/
 		}
 		ENDCG
 	}

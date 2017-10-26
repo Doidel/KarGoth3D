@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Wood
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 7887f8b87ce0060429b75e395bdfe415, type: 3}
   m_ShaderKeywords: _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -67,6 +67,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _Falloff: 10
     - _GlossMapScale: 0.261
     - _Glossiness: 0.293
     - _GlossyReflections: 1
@@ -75,6 +76,9 @@ Material:
     - _OcclusionStrength: 1
     - _Outline: 0.03
     - _Parallax: 0.02
+    - _SampleDistance: 1
+    - _SensitivityX: 3.75
+    - _SensitivityY: 0.82
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1

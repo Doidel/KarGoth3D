@@ -10,21 +10,10 @@ public class EdgeRT : MonoBehaviour {
     [SerializeField]
     private Camera _camera;
     private int _downResFactor = 1;
+    private int currentWidth;
+    private int currentHeight;
 
     private string _globalTextureName = "_GlobalEdgeTex";
-
-    public Material buildingMaterial = null;
-
-    private void Awake()
-    {
-        GenerateRT();
-    }
-
-    void OnPreRender()
-    {
-        //buildingMaterial.SetFloat("_Draw", 1);
-        //Shader.SetGlobalFloat("_Draw", 1);
-    }
 
     void GenerateRT()
     {
@@ -38,9 +27,21 @@ public class EdgeRT : MonoBehaviour {
             DestroyImmediate(temp);
         }
 
-        _camera.targetTexture = new RenderTexture(_camera.pixelWidth >> _downResFactor, _camera.pixelHeight >> _downResFactor, 16);
+        _camera.targetTexture = new RenderTexture(_camera.pixelWidth * _downResFactor, _camera.pixelHeight * _downResFactor, 16);
         _camera.targetTexture.filterMode = FilterMode.Bilinear;
 
         Shader.SetGlobalTexture(_globalTextureName, _camera.targetTexture);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (currentHeight != Screen.currentResolution.height || currentWidth != Screen.currentResolution.width)
+        {
+            currentHeight = Screen.height;
+            currentWidth = Screen.width;
+            GenerateRT();
+        }
+
     }
 }

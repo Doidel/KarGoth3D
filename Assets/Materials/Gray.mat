@@ -67,7 +67,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Falloff: 1
+    - _Falloff: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.436
     - _GlossyReflections: 1
@@ -78,8 +78,8 @@ Material:
     - _Parallax: 0.02
     - _SampleDistance: 1
     - _Sensitivity: 0.9
-    - _SensitivityX: 2.28
-    - _SensitivityY: 0.67
+    - _SensitivityX: 3.75
+    - _SensitivityY: 0.82
     - _Sensivity: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
