@@ -27,6 +27,7 @@
 		sampler2D _BumpMap;
 		half _Shininess;
 		fixed _Cutoff;
+		fixed4 _Color;
 		 
 		struct Input {
 			float2 uv_MainTex;
@@ -35,7 +36,7 @@
 		};
 		 
 		void surf (Input IN, inout SurfaceOutput o) {
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * IN.color;
+			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * IN.color * _Color;
 			fixed4 d = tex2D(_MainTex, IN.uv_MainTex);
 			o.Albedo = c.rgb;
 			o.Alpha = d.a;
