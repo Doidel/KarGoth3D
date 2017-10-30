@@ -274,21 +274,21 @@
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>Library\UnityAssemblies\UnityEditor.Purchasing.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-UnityScript">
-      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
-    </Reference>
     <Reference Include="Assembly-UnityScript-firstpass">
       <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-UnityScript">
+      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="MarkoHouse.csproj">
-      <Project>{B9BF4264-4558-7EE6-602C-7C68FCD29044}</Project>
-      <Name>MarkoHouse</Name>
-    </ProjectReference>
     <ProjectReference Include="MarkoHouse.Plugins.csproj">
       <Project>{A3E86CCC-A8F7-43B0-9D93-34196DE298B2}</Project>
       <Name>MarkoHouse.Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="MarkoHouse.csproj">
+      <Project>{B9BF4264-4558-7EE6-602C-7C68FCD29044}</Project>
+      <Name>MarkoHouse</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -339,6 +339,7 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+    <None Include="Assets\Scripts\EdgeRTApply.shader" />
     <None Include="Assets\Scripts\Shaders\FalloffEdgeDetectNormals.shader" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
@@ -424,9 +425,6 @@
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
-    <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
-    <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
-    <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
     <None Include="Assets\modern_farm\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
