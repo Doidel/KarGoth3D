@@ -8,6 +8,10 @@ public class GridTile : MonoBehaviour {
     private Renderer planeRenderer;
     private GridManager manager;
 
+    public GridObject Building { get; private set; }
+
+    public int PositionX;
+    public int PositionY;
 
     public enum GridStatus
     {
@@ -35,6 +39,12 @@ public class GridTile : MonoBehaviour {
             color = Status == GridStatus.Free ? 0 : 1;
         }
         planeRenderer.material.SetColor("_Color", manager.TileColors[color]);
+    }
+
+    public void SetBuilding(GridObject o)
+    {
+        Building = o;
+        Status = o == null ? GridStatus.Free : GridStatus.Occupied;
     }
 
     public void SetManager(GridManager manager)
