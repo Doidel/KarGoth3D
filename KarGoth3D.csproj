@@ -334,6 +334,7 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
     <None Include="Assets\Scripts\EdgeRTApply.shader" />
+    <None Include="Assets\Scripts\NewSurfaceShader.shader" />
     <None Include="Assets\Scripts\Shaders\FalloffEdgeDetectNormals.shader" />
     <None Include="Assets\Scripts\Shaders\GridTile.shader" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
