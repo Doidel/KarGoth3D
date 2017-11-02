@@ -66,14 +66,18 @@ public class GridManager : MonoBehaviour {
 
             if (BrushSelected != null)
             {
-                BrushSelected.transform.localPosition = new Vector3(gt.transform.localPosition.x, 0, gt.transform.localPosition.y);
-                if (gt.Status == GridTile.GridStatus.Free)
+                BrushSelected.transform.localPosition = new Vector3(gt.transform.localPosition.x, 0, gt.transform.localPosition.z);
+                if (Input.GetMouseButtonDown(0) && gt.Status == GridTile.GridStatus.Free)
                 {
                     // get all tiles that should be built upon
                     GridTile[,] brushTiles;
                     if (GetAllBrushTargetTiles(gt, out brushTiles))
                     {
-                        var newGridObject = Instantiate(BrushSelected, Vector3.zero, Quaternion.identity, gt.transform);
+                        Debug.Log("building road");
+                        var newGridObject = Instantiate(BrushSelected);
+                        newGridObject.transform.parent = gt.transform;
+                        newGridObject.transform.localPosition = Vector3.zero;
+                        newGridObject.transform.localRotation = Quaternion.identity;
                         gt.SetBuilding(newGridObject);
                     }
                 }
