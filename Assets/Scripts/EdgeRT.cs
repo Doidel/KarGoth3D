@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
@@ -9,14 +7,14 @@ public class EdgeRT : MonoBehaviour {
     [HideInInspector]
     [SerializeField]
     private Camera _camera;
-    private int _downResFactor = 1;
     private int currentWidth;
     private int currentHeight;
 
     private string _globalTextureName = "_GlobalEdgeTex";
 
-    void GenerateRT()
+    void SetupRT()
     {
+        // let's only render depth and normals...
         _camera = GetComponent<Camera>();
         _camera.depthTextureMode = DepthTextureMode.DepthNormals;
 
@@ -27,10 +25,12 @@ public class EdgeRT : MonoBehaviour {
             DestroyImmediate(temp);
         }
 
-        _camera.targetTexture = new RenderTexture(_camera.pixelWidth * _downResFactor, _camera.pixelHeight * _downResFactor, 16);
+        // ... to a RenderTexture 
+        _camera.targetTexture = new RenderTexture(_camera.pixelWidth, _camera.pixelHeight, 16);
         _camera.targetTexture.filterMode = FilterMode.Bilinear;
 
-        Shader.SetGlobalTexture(_globalTextureName, _camera.targetTexture);
+        // we don't actually need this:
+        //Shader.SetGlobalTexture(_globalTextureName, _camera.targetTexture);
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class EdgeRT : MonoBehaviour {
         {
             currentHeight = Screen.height;
             currentWidth = Screen.width;
-            GenerateRT();
+            SetupRT();
         }
 
     }

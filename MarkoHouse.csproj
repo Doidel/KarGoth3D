@@ -278,6 +278,9 @@
     <Compile Include="Assets\Scripts\Fence.cs" />
     <Compile Include="Assets\Scripts\FlyCamera.cs" />
     <Compile Include="Assets\Scripts\Garden.cs" />
+    <Compile Include="Assets\Scripts\GridManager.cs" />
+    <Compile Include="Assets\Scripts\GridObject.cs" />
+    <Compile Include="Assets\Scripts\GridTile.cs" />
     <Compile Include="Assets\Scripts\MeshCombiner.cs" />
     <Compile Include="Assets\Scripts\PaintEdges.cs" />
     <Compile Include="Assets\Scripts\PostEffectsBase.cs" />
@@ -330,7 +333,9 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
     <None Include="Assets\Scripts\EdgeRTApply.shader" />
+    <None Include="Assets\Scripts\NewSurfaceShader.shader" />
     <None Include="Assets\Scripts\Shaders\FalloffEdgeDetectNormals.shader" />
+    <None Include="Assets\Scripts\Shaders\GridTile.shader" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Readme.txt" />
