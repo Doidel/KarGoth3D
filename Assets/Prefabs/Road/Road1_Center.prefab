@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4897761220908492}
   - component: {fileID: 114803254261816394}
+  - component: {fileID: 114161115226712348}
   m_Layer: 0
   m_Name: Road1_Center
   m_TagString: Untagged
@@ -112,6 +113,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1068481982118432}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114161115226712348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1014426990882268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0836f974eb101734b8da444a27f4da8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StoneWallSmall: {fileID: 1866281144105592, guid: 0a1aa45668e7ba24dbb6755c47e60f95,
+    type: 2}
+  StoneWallMedium: {fileID: 1858614468938732, guid: 322f2206d428b9a40ae2dbb2e4d2c69f,
+    type: 2}
+  StoneWallLong: {fileID: 1222406890262416, guid: e92869b8ea9bab349ad14a2700d92c8f,
+    type: 2}
 --- !u!114 &114803254261816394
 MonoBehaviour:
   m_ObjectHideFlags: 1

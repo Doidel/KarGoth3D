@@ -13,6 +13,9 @@ public class GridTile : MonoBehaviour {
     public int PositionX;
     public int PositionY;
 
+    // north, west, east, south
+    public GridTile[] Neighbours { get; private set; }
+
     public enum GridStatus
     {
         Free,
@@ -60,5 +63,15 @@ public class GridTile : MonoBehaviour {
     internal void Hide()
     {
         SetColor(2);
+    }
+
+    public void UpdateNeighbours()
+    {
+        var t = GridManager.Instance.Tiles;
+        var tileNorth = PositionY - 1 >= 0 ? t[PositionX, PositionY - 1] : null;
+        var tileWest = PositionX - 1 >= 0 ? t[PositionX - 1, PositionY] : null;
+        var tileEast = PositionX + 1 < t.GetLength(0) ? t[PositionX + 1, PositionY] : null;
+        var tileSouth = PositionY + 1 < t.GetLength(1) ? t[PositionX, PositionY + 1] : null;
+        Neighbours = new GridTile[] { tileNorth, tileWest, tileEast, tileSouth };
     }
 }

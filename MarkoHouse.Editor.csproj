@@ -478,6 +478,7 @@
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Stonewall\readme.txt" />
     <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
     <None Include="Assets\modern_farm\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>

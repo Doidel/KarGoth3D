@@ -9,8 +9,13 @@ public class GridManager : MonoBehaviour {
     public GridTile GridTilePrefab;
 
     public GridObject BrushSelected { get; private set; }
-
     public GridTile[,] Tiles { get; private set; }
+    public static GridManager Instance { get; private set; }
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +41,11 @@ public class GridManager : MonoBehaviour {
                 tiles[x - offsetX, y - offsetY] = gt;
             }
         }
+        // update neighbour associations
+        // TODO: update tiles' neighbours already existing before CreateGrid
+        for (int x = offsetX; x < sizeX + offsetX; x++)
+            for (int y = offsetY; y < sizeY + offsetY; y++)
+                tiles[x - offsetX, y - offsetY].UpdateNeighbours();
         return tiles;
     }
 
