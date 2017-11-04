@@ -285,6 +285,7 @@
     <Compile Include="Assets\Scripts\PaintEdges.cs" />
     <Compile Include="Assets\Scripts\PostEffectsBase.cs" />
     <Compile Include="Assets\Scripts\RenderEdgesOnTop.cs" />
+    <Compile Include="Assets\Scripts\Specific\DirtRoad.cs" />
     <Compile Include="Assets\Scripts\Specific\StoneRoad.cs" />
     <Compile Include="Assets\Scripts\Specific\StoneWall.cs" />
     <Compile Include="Assets\Scripts\WheatField.cs" />
