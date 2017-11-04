@@ -8,6 +8,11 @@ public class GridObject : MonoBehaviour {
     public int SizeX;
     public int SizeY;
 
+    [HideInInspector]
+    public int PositionX;
+    [HideInInspector]
+    public int PositionY;
+
     private void Awake()
     {
 

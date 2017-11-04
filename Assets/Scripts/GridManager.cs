@@ -19,7 +19,7 @@ public class GridManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Tiles = CreateGrid(0, 0, 50, 50);
+        CreateGrid(0, 0, 50, 50);
     }
 
     public void SelectBrush(GridObject o)
@@ -27,7 +27,7 @@ public class GridManager : MonoBehaviour {
         BrushSelected = Instantiate(o);
     }
 
-    private GridTile[,] CreateGrid(int offsetX, int offsetY, int sizeX, int sizeY)
+    private void CreateGrid(int offsetX, int offsetY, int sizeX, int sizeY)
     {
         GridTile[,] tiles = new GridTile[sizeX, sizeY];
         for (int x = offsetX; x < sizeX + offsetX; x++)
@@ -41,12 +41,14 @@ public class GridManager : MonoBehaviour {
                 tiles[x - offsetX, y - offsetY] = gt;
             }
         }
+
+        Tiles = tiles;
+
         // update neighbour associations
         // TODO: update tiles' neighbours already existing before CreateGrid
         for (int x = offsetX; x < sizeX + offsetX; x++)
             for (int y = offsetY; y < sizeY + offsetY; y++)
                 tiles[x - offsetX, y - offsetY].UpdateNeighbours();
-        return tiles;
     }
 
     // Update is called once per frame
@@ -88,6 +90,8 @@ public class GridManager : MonoBehaviour {
                         newGridObject.transform.parent = gt.transform;
                         newGridObject.transform.localPosition = Vector3.zero;
                         newGridObject.transform.localRotation = Quaternion.identity;
+                        newGridObject.PositionX = gt.PositionX;
+                        newGridObject.PositionY = gt.PositionY;
                         gt.SetBuilding(newGridObject);
                     }
                 }
