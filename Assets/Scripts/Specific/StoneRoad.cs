@@ -9,7 +9,7 @@ public class StoneRoad : MonoBehaviour {
     public GameObject StoneWallMediumPrefab;
     public GameObject StoneWallLongPrefab;
 
-    public float WallDistanceFromCenter;
+    public const float WallDistanceFromCenter = 2f;
 
     public GameObject[] StoneWalls { get; private set; }
 
