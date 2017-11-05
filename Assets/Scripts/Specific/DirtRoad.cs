@@ -78,23 +78,23 @@ public class DirtRoad : MonoBehaviour {
                 }
                 else if (neighbourRoads[0] != null && neighbourRoads[1] != null) // north and west
                 {
-                    childTransform.localRotation = Quaternion.Euler(0, 90, 0);
-                    childRenderer.material.SetTexture("_MainTex", Curves[Random.Range(0, Curves.Length)]);
+                    childTransform.localRotation = Quaternion.identity;
+                    childRenderer.material.SetTexture("_MainTex", Curves[1]);
                 }
                 else if (neighbourRoads[0] != null && neighbourRoads[2] != null) // north and east
                 {
                     childTransform.localRotation = Quaternion.identity;
-                    childRenderer.material.SetTexture("_MainTex", Curves[Random.Range(0, Curves.Length)]);
+                    childRenderer.material.SetTexture("_MainTex", Curves[0]);
                 }
                 else if (neighbourRoads[3] != null && neighbourRoads[1] != null) // south and west
                 {
-                    childTransform.localRotation = Quaternion.Euler(0, 180, 0);
-                    childRenderer.material.SetTexture("_MainTex", Curves[Random.Range(0, Curves.Length)]);
+                    childTransform.localRotation = Quaternion.identity;
+                    childRenderer.material.SetTexture("_MainTex", Curves[3]);
                 }
                 else if (neighbourRoads[3] != null && neighbourRoads[2] != null) // south and east
                 {
-                    childTransform.localRotation = Quaternion.Euler(0, 270, 0);
-                    childRenderer.material.SetTexture("_MainTex", Curves[Random.Range(0, Curves.Length)]);
+                    childTransform.localRotation = Quaternion.identity;
+                    childRenderer.material.SetTexture("_MainTex", Curves[2]);
                 }
                 break;
             case 3:

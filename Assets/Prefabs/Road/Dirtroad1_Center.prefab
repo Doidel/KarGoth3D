@@ -66,8 +66,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772725456649074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4999, y: 0, z: 2.4999}
-  m_LocalScale: {x: 0.5002, y: 1, z: 0.5002}
+  m_LocalPosition: {x: 2.499, y: 0, z: 2.499}
+  m_LocalScale: {x: 0.502, y: 1, z: 0.502}
   m_Children: []
   m_Father: {fileID: 4199592828285342}
   m_RootOrder: 0
@@ -145,4 +145,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 244472abc5146ed49b6af6e36d744905, type: 3}
   Curves:
   - {fileID: 2800000, guid: 14d84995c51eb2b40a5d45b9f4e63b9f, type: 3}
+  - {fileID: 2800000, guid: c3c2e6aaa9b8eae468ecfef7f9533b4d, type: 3}
+  - {fileID: 2800000, guid: 4d9cb57c587b51042ba6968d7be32530, type: 3}
+  - {fileID: 2800000, guid: 6ed4dc1297c72cd4da76df8daa2eb0b7, type: 3}
   Forks: []
